@@ -1,0 +1,55 @@
+--> ERC20  :    
+
+        . They are basically digital asset.
+        . They are used to make digital currencies.
+        . Loyalty points.
+        . They can be represented as a ownership in a company.
+        . ERC20 tokens runs on the Ethereum blockchain. eg: shiba inu coin.
+        
+        Advantages : 
+           
+           . No need to create their own blockchain.
+           . Reduce cost maintanance of the blockchain.
+           
+           
+   ERC20 : it stands for Ethereum Request for comment and 20 is just a unique ID.
+   
+         . It basically defines the set of rules to the developer that should be followed so that exchage should be made easier.
+         . Following these standards make the life of the developer easier as it can be more compatible for exchanges and Dapps.
+         
+       
+       Digital currency => shiba innu
+       loyalty points => mata
+       stable coins => These are the coins which are equal to a standard currency. Eg- dei
+       
+       
+   - How are ERC20 tokens are made ?
+   . It is basically a smart contract which is mostly written in solidity language.
+   . Whenver we deploy any ERC20 token on the ethereum blockhain we have to pay gas fees and whenever we made any ERC token transaction then we have
+     to pay ether.
+   . In this we have 6 obligant rules and 3 optional rules.
+   
+     . 6 obligant rules : 
+         1.) Total supply : How much is the total supply of our token.
+         2.) balanceOf : To get the balance.
+         3.) Transfer : This is used to transfer token from ano address to another.
+         4.) TransferFrom :from to amount
+         5.) approval
+         6.) allowances
+         
+     . 3 optional rules :
+      
+         1. Name 
+         2. Symbol
+         3. Decimal : upto how many decimals we want ( generally in ERC20 toekn we write decimals upto 18 decimals ).
+         
+         
+         
+    --> Drawbacks of ERC20 tokens:   
+    
+        . Very high gas fees.
+        . When there is a load on ethereum blockchain then  transaction becomes slow.
+        . In ERC20 there is a bug in transfer that is let suppose we are transferring certain tokens to a dapp and the dapp if the dapp have no approval
+          then our tokens will lost.
+   
+    
