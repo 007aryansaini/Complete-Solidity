@@ -11,7 +11,8 @@
 
            . It is generally the first line of code within an Solidity File.
            . It is a directive that specifies the compiler version to be used for the current Solidity file.
-           . Syntax - pragma slidity >= 0.7.0 < 0.9.0;   -- This is for a range of compilers this means that it supports compiler version greater than equal to 0.7.0 and less than 0.9.0
+           . Syntax - pragma slidity >= 0.7.0 < 0.9.0;   -- This is for a range of compilers this means that it supports compiler version greater 
+                      than equal to 0.7.0 and less than 0.9.0
                       we can also specify one particular version syntax pragma solidity 0.8.0;
 
 
@@ -97,7 +98,8 @@ Three syntax :    pragma solidity 0.8.0;
            . Contract accounts - These are controlled by the code stored together with the account.
 
         #note - The address of an external account is determined from the public key while the address of the contract
-                is determained by the time the contract is created ( it is derived from the creator address and the number of transactions sent from that address, the so called "nonce")..
+                is determained by the time the contract is created ( it is derived from the creator address and the number of transactions sent
+                from that address, the so called "nonce")..
 
         #note - Regardless of whether or not the account stores code , the two types are created equally by the EVM.
 
@@ -208,7 +210,8 @@ step3 - increament/decreament
 --> memory in Solidity :
 
       . much like RAM , Memory in solidity is a temporary place to store data whereas storage hold the data between the function call.
-      . The Solidity contract can use any amount of memory during the execution but once the execution stops , the memory is completely wiped off for the next execution.
+      . The Solidity contract can use any amount of memory during the execution but once the execution stops , the memory is completely wiped 
+        off for the next execution.
 
    #NOTE Imp -- > The Gas consumption of Memory is not very significant as compared to the gas consumption of Storage. 
                   Therefore, it is always better to use Memory for intermediate calculations and store the final result in Storage.
@@ -218,17 +221,17 @@ Four types of memory Allocations ->
 
 1. Storage : Storage means that you are storing a variable directly on the blockchain. It is persistent. You can still use the value in future.
 
-2. Memory : This is temporary memory. The data is not stored on the bloclchain. It is not persistent. It's the temporary memory or we can say copy of data 
-            is created temporary. There are some data type like string which directly stored on blockchain or storage then we have to take them in memory by
-            using memory keyword as they cannot be stored in local variables.
+2. Memory : This is temporary memory. The data is not stored on the bloclchain. It is not persistent. It's the temporary memory or we can say copy
+            of data is created temporary. There are some data type like string which directly stored on blockchain or storage then we have to take 
+            them in memory by using memory keyword as they cannot be stored in local variables.
 
 3. Stack : Every single variable that you have created inside a function.
 
 4. Calldata : special data location that contains the function arguments, only available for external function call parameters.
-              It is similar to memory and it can be used whenver we want a input and we do not want to change the value of input then calldata can be used in place
-              of memory. Data in calldata cannot be changed. Benifit is gas cost is less than memory.
-            . When we pass value from calldata to calldata the value is not copied same value is used. But if we pass value from calldata to memory then another 
-              array is created. So in calldata to calldata gascost is less.
+              It is similar to memory and it can be used whenver we want a input and we do not want to change the value of input then calldata can
+              be used in place of memory. Data in calldata cannot be changed. Benifit is gas cost is less than memory.
+            . When we pass value from calldata to calldata the value is not copied same value is used. But if we pass value from calldata to memory 
+              then another array is created. So in calldata to calldata gascost is less.
 
 
 #*** NOTE : Anything which is stored in storage can be passed in memory.
@@ -244,7 +247,8 @@ Four types of memory Allocations ->
 
 #Note - 
 
- Strings are too expensive computationally to get length in solidity so you can't do it like other languages - utf storing (solidity removes the process)
+ Strings are too expensive computationally to get length in solidity so you can't do it like other languages - utf storing (solidity removes the
+ process)
     
     function getStringLength() public view  returns(uint) {
         bytes memory stringToBytes = bytes(greetings);
@@ -400,7 +404,8 @@ Four types of memory Allocations ->
     # IMPORTANT_NOTE ->  In solidity you can't iterate through the map, you need to store the keys in an array and you can't  give size.
 
      
-                     -> In Solidity if we try to retrieve a value corresponding to a key and if we haven't set the value then we will get a default value i.e. 0.
+                     -> In Solidity if we try to retrieve a value corresponding to a key and if we haven't set the value then we will get a default
+                        value i.e. 0.
                  
 
 
@@ -504,7 +509,8 @@ Four types of memory Allocations ->
 
 
 
-   # NOTE : The function body is inserted where the special symbol "_;" appears in the definition of a modifier. So if condition of modifier is satisfied while calling this function,
+   # NOTE : The function body is inserted where the special symbol "_;" appears in the definition of a modifier. So if condition of modifier is 
+            satisfied while calling this function,
             the function is executed and otherwise, an exception is thrown.
  
 
@@ -600,11 +606,15 @@ Four types of memory Allocations ->
 
 
 
---> Fallback and Recieve in Solidity : The work 'recieve' done can be done by fallback but vice-verca is not true. as recieve only takes ether but fallback takes both 
-                                       data and ether.
+--> Fallback and Recieve in Solidity : The work 'recieve' done can be done by fallback but vice-verca is not true. as recieve only takes ether but
+                                      fallback takes both data and ether.
 
 
-   . FALLBACK  :    The solidity fallback function is executed if none of the other functions match the function identifier or no data was provided with the function call. Only one unnamed function can be assigned to a contract and it is executed whenever the contract receives plain Ether without any data. To receive Ether and add it to the total balance of the contract, the fallback function must be marked payable. If no such function exists, the contract cannot receive Ether through regular transactions and will throw an exception.
+   . FALLBACK  :    The solidity fallback function is executed if none of the other functions match the function identifier or no data was provided
+                    with the function call. Only one unnamed function can be assigned to a contract and it is executed whenever the contract
+                    receives plain Ether without any data. To receive Ether and add it to the total balance of the contract, the fallback function
+                    must be marked payable. If no such function exists, the contract cannot receive Ether through regular transactions and will
+                    throw an exception.
 
                     Properties of a fallback function:
 
@@ -643,8 +653,8 @@ Four types of memory Allocations ->
 
 
 --> Function Overloading in solidity :    In this we have same function name but they take different arguments at the time
-                                                                                      of calling the function that function is called that have matched the type of the
-                                                                                      function.
+                                          of calling the function that function is called that have matched the type of the function.
+                                                                                      
 
 
              . You can have multiple defination for the same function name in the same scope.
@@ -705,7 +715,8 @@ Four types of memory Allocations ->
  
                . Event is an inheritable member of a contract.
                . An event is emitted, it stores the arguments passed in transaction logs.
-               . These logs are stored on blockchain and are accessible using address of the contract till the contract is present on the blockchain.
+               . These logs are stored on blockchain and are accessible using address of the contract till the contract is present on the
+                  blockchain.
                . An event generated is not accessible from within contracts, not even the one which have created and emitted them.
 
                .  //Declare an Event
@@ -750,7 +761,8 @@ Four types of memory Allocations ->
 
 Restricted Access to a Contract is a common practice. By Default, a contract state is read-only unless it is specified as public.
 
-We can restrict who can modify the contract's state or call a contract's functions using modifiers. We will create and use multiple modifiers as explained below −
+We can restrict who can modify the contract's state or call a contract's functions using modifiers. We will create and use multiple modifiers as 
+explained below −
 
 onlyBy − once used on a function then only the mentioned caller can call this function.
 
@@ -793,7 +805,8 @@ costs − once used on a function then caller can call this function only if cer
       base like : that contract which will be less inherited will be more baselike.
 
 . Properties are inherited from right to left order. Eg : contract C is A,B { } then first C inherit property of B and then A.
-. And while doing all these if there are some properties that are present in B and A also then it will neglect to take such properties from A as they are inherited from B.
+. And while doing all these if there are some properties that are present in B and A also then it will neglect to take such properties from A as
+  they are inherited from B.
 
 
 
@@ -827,7 +840,8 @@ costs − once used on a function then caller can call this function only if cer
 
 --> Interface :    
  
-           . Interfaces are similar to abstract contracts and are created using interface keyword. Following are the key characteristics of an interface.
+           . Interfaces are similar to abstract contracts and are created using interface keyword. Following are the key characteristics of an
+             interface.
 
            . Interface can not have any function with implementation.
 
@@ -859,7 +873,8 @@ costs − once used on a function then caller can call this function only if cer
            . A Library contains functions which other contracts can call. Solidity have certain restrictions on use of a Library. 
            . Following are the key characteristics of a Solidity Library.
 
-              . Library functions can be called directly if they do not modify the state. That means pure or view functions only can be called from outside
+              . Library functions can be called directly if they do not modify the state. That means pure or view functions only can be called 
+                from outside
                 the library.
 
               . Library can not be destroyed as it is assumed to be stateless.
@@ -915,10 +930,9 @@ costs − once used on a function then caller can call this function only if cer
 
 
 
-               . assert(bool condition) − In case condition is not met, this method call causes an invalid opcode and any changes done to state got reverted. 
-                                                                         This method is to be used for internal errors.
-
-                                                                    It is basically used to check bug in a smart contract and security.
+               . assert(bool condition) − In case condition is not met, this method call causes an invalid opcode and any changes done to state
+                                          got reverted.This method is to be used for internal errors.
+                                          It is basically used to check bug in a smart contract and security.
 
                                                           
  
@@ -972,7 +986,8 @@ costs − once used on a function then caller can call this function only if cer
 --> Payable :    
 
                . Tt is used to make an address or a function payable by adding a payable keyword.
-               . While delaring an address as payable payable keyword should be declare just after the dataType. For eg-  address payable public owner.
+               . While delaring an address as payable payable keyword should be declare just after the dataType. For eg-  address payable public
+                 owner.
                . If we make an address as payable then we can send ether to this account through this contract.
                . If a contract have a payable function then with this function we can sebd ether to the contract.
                . While assigning we also have to typeCast/covert the adrress also as payable. For eg- payable ( msg..sender ).
@@ -998,10 +1013,11 @@ costs − once used on a function then caller can call this function only if cer
         c.) call
 
 
-   - SEND : . When we transfer ether from to contract to an address ( address or contract ) usind send function it returns a bool value if the transaction is
-              successful or false if the transaction is unsuccessful.
+   - SEND : . When we transfer ether from to contract to an address ( address or contract ) usind send function it returns a bool value if the 
+              transaction is successful or false if the transaction is unsuccessful.
             . This has a gas limit of 2300.
-            . If the send functions fails then it will not returns the leftover gas and we have to use require if we want to return the leftover gas.
+            . If the send functions fails then it will not returns the leftover gas and we have to use require if we want to return the leftover
+              gas.
             . State variable also do not revert if we made some changes and the transacion failed so we have to use require.  
  
 
