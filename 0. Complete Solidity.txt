@@ -1,0 +1,1024 @@
+--> Smart contract are digital contract stored on a blockchain that are automatically executed when predetermined terms and conditions are met.
+
+--> Solidity 
+           . Solidity is contract-oriented , high level language for implementing smart contract.
+           . Solidty is a Language that is used to develop smart contract.
+           . It is designed to target the Ethereum Virtual Machine(EVM).
+           . Solidity is a curly-bracket language.
+           . It is object oriented too.
+
+--> Pragma in Solidity 
+
+           . It is generally the first line of code within an Solidity File.
+           . It is a directive that specifies the compiler version to be used for the current Solidity file.
+           . Syntax - pragma slidity >= 0.7.0 < 0.9.0;   -- This is for a range of compilers this means that it supports compiler version greater than equal to 0.7.0 and less than 0.9.0
+                      we can also specify one particular version syntax pragma solidity 0.8.0;
+
+
+Three syntax :    pragma solidity 0.8.0;
+                  pragma solidity >= 0.5.0  < 0.9.0;
+                  pragma solidity ^0.5.0;
+
+      
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ------------------
+
+
+
+--> Variables : 
+         
+            . They are nothing but the reserve memory locations to store values.
+            . This means when you are creating a variable you are reserving some space in the memory.
+            . Formal Defination - Variables are used to store information to be referenced and manipulated in a computer program.
+
+--> The three main types of Variables in Solidity are -
+
+            . Boolean - keyword : bool - Value: true/false
+            . Integer - keyword : uint - value - signed and unsigned integer of varying sizes
+            . String  - keyword : string - value - data values that ar made up of ordered sequence of characters.
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ------------------
+
+ 
+
+--> Function 
+
+      . A function is a piece of code that can be used again and again without  rewriting the the whole code again we just only have 
+        to write the function name.
+      . It is basically used for code reusablility.
+      . It allows a programmer to divide a big problem into smaller and meaningfun problem.
+      . Main purpose of function is to reduce redundancy and increase efficiency.
+     
+
+--> Syntax to write a function
+
+     . function function-name( parameter list ) scope returns() {
+
+         -----------
+         -----------   statements / code is a function is written in  curly brackett.
+
+      }
+
+
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+--> Scope - Functions and Vraiables 
+
+   . All the variables that we write in a function are localized in the function only. This is the local scope of these variables.
+   . if we declare any state variable then we can acces this state variable anywhere in the same contract.
+
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+--> The Ethereum Virtual Machine -
+
+      a.) Overview -
+          
+           . The EVM is the runtime evvironment for smart contracts in ethereum.
+           . It is completely isolated which means that the code running inside EVM has no access to network , filesystem or other processes.
+           . Smart contract have limited access to to other smart contracts.
+
+      b.) Accounts -
+  
+           . There are two kinds of account in Ethereum which shares the same address space.
+           . External accounts - These are controlled by public - private key pairs( i.e. humans)
+           . Contract accounts - These are controlled by the code stored together with the account.
+
+        #note - The address of an external account is determined from the public key while the address of the contract
+                is determained by the time the contract is created ( it is derived from the creator address and the number of transactions sent from that address, the so called "nonce")..
+
+        #note - Regardless of whether or not the account stores code , the two types are created equally by the EVM.
+
+        #note - Every account has a persistent key-value store mapping 256-bit words to 256-bit words called storage.
+
+        #note - Every account has a balance in Ether which can be modified by sending transactions that include Ether.
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+-->     
+ 
+    While writing a program, there may be a situation when you need to adopt one out of a 
+    given set of pahs. In such cases, you need to use conditional statements that allow your
+    program to make correct decision and perform right actions.
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+-->
+
+   . We can modify the rules of scope in solidity with 4 keywords namely - public , private , internal , external.
+   
+
+--> Public 
+    
+       .  public means that you can access the variable or a function outside the smart contract and inside the smart contract.
+   
+        
+--> Private 
+ 
+      .  you can only call the function inside the contract.
+
+--> External 
+ 
+      . you can only call the function outside the contract and not within the contract in which it is declared as external.
+
+--> Internal 
+
+      .  Call within the contract or other contract that inherits this contract.
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+--> Operators : 
+
++
+In any programming language, operators play a vital role i.e.
+they create a foundation for the programming. Similarly, the functionality of 
+Solidity is also incomplete without the use of operators. Operators allow users to perform 
+different operations on operands. Solidity supports the following types of operators based upon their functionality.
+
+Arithmetic Operators
+Relational Operators
+Logical Operators
+Bitwise Operators
+Assignment operators
+Conditional Operator
+
+
+
+
+
+
+ -------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+--> The for loop 
+
+
+      syntax - for(  initialize variable ; condition ; increament/ decrement ) {
+
+                              ------- statements that we want to execute again and again.
+                }
+
+
+Step1 - Initialization
+step2 - Conditional statement
+step3 - increament/decreament
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+
+
+
+--> String :  Values that are made up of ordered sequence of characters, such as "Hello World".
+
+   # Solidity supports string literals using both double quote ( " ) and single quote( ' ).
+   # Solidity provide string as a datatype to store string literals.
+   # Anything that is wrapped in the quotation is string.
+
+
+           eg = "Hello"
+                 'Aryan'
+                  34 -> not a string
+                  "34" --> Now it is a string as it is wrapped in double quote.
+
+--> memory in Solidity :
+
+      . much like RAM , Memory in solidity is a temporary place to store data whereas storage hold the data between the function call.
+      . The Solidity contract can use any amount of memory during the execution but once the execution stops , the memory is completely wiped off for the next execution.
+
+   #NOTE Imp -- > The Gas consumption of Memory is not very significant as compared to the gas consumption of Storage. 
+                  Therefore, it is always better to use Memory for intermediate calculations and store the final result in Storage.
+
+
+Four types of memory Allocations ->
+
+1. Storage : Storage means that you are storing a variable directly on the blockchain. It is persistent. You can still use the value in future.
+
+2. Memory : This is temporary memory. The data is not stored on the bloclchain. It is not persistent. It's the temporary memory or we can say copy of data 
+            is created temporary. There are some data type like string which directly stored on blockchain or storage then we have to take them in memory by
+            using memory keyword as they cannot be stored in local variables.
+
+3. Stack : Every single variable that you have created inside a function.
+
+4. Calldata : special data location that contains the function arguments, only available for external function call parameters.
+              It is similar to memory and it can be used whenver we want a input and we do not want to change the value of input then calldata can be used in place
+              of memory. Data in calldata cannot be changed. Benifit is gas cost is less than memory.
+            . When we pass value from calldata to calldata the value is not copied same value is used. But if we pass value from calldata to memory then another 
+              array is created. So in calldata to calldata gascost is less.
+
+
+#*** NOTE : Anything which is stored in storage can be passed in memory.
+            Anything which is stored in memory cannot be passed in calldata.
+            But we can pass data from calldata to memory.
+
+
+  GAS Cost : calldata < memory < storage 
+
+
+
+
+
+#Note - 
+
+ Strings are too expensive computationally to get length in solidity so you can't do it like other languages - utf storing (solidity removes the process)
+    
+    function getStringLength() public view  returns(uint) {
+        bytes memory stringToBytes = bytes(greetings);
+        return stringToBytes.length;
+        // greetings.length;
+    }
+
+
+# This can be achieved the string a string into bytes because working in bytes generally saves the computational cost.
+
+
+
+
+#NOTE :
+
+     // € watch for special characters - use if statement
+     // \ skip characters 
+     // "" double characters 
+     // \n for a new line 
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+
+--> Constructor in Solidity :
+
+   . Constructor is a special type of function using constructor keyword.
+   . It initializes the state variables of a contract.
+
+--> Following are the key characterstick of a constructor :
+
+   1. A contract can only have one constructor.
+   2. A constructor code is executed once when a contract is created and it is used to initialize the contract state.
+   3. In case , no constructor is defined, a default constructor is present in the contract.
+   4. After the constructor code gets executed, the final code is deployed to blockchain.
+      This code includes public functions and code reachable through functions.
+      Constructor code or any internal method used only by constructor are not included in the final code.
+   5. A constructor can be either public or internal.
+   6. An internal constructor marks the contract as abstract.
+
+
+
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+
+--> Array :
+    
+      . An array is a data structure which is used to store the similar type of data.
+      . It used contiguous memory.
+
+
+--> We will see :
+    
+     . How to write an array.    dataType[] name;
+     . Three basic operations namely push, pop and length.   
+     . Remove elements from array.
+
+
+-->    . Three ways ->
+        
+          uint[] myArray;
+          uint[] myArray2;
+          uint[200] myFixedSizedArray;
+
+
+
+--> . The push() method allows you to add one or more element in an array and returns the new length of the array.
+    . The pop() method returns the last element of the array and returns that element to the caller.
+
+-->  When we want to delete the element a some particular index we use delete keyword.
+      #Note - By using delete we are not actually removing the value but we are setting the value at that particular index to default value i.e. 0.
+              This will also not change the length of the array.
+              In solidity also the array indexes start from 0 onwards.
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+--> Enums in Solidity 
+
+
+    . Enum restrict a variable to have one of only a few predefined values. The values in this enumurated list are called enums.
+    . With the use of enums it is possible to reduce the number of bugs in your code.
+
+
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+-> Struct :
+
+    . Structure are used to define our own data type.
+    . Struct are types that are used to represent a record.
+    . Defining a Struct : To define a Struct, you must use the struct keyword. 
+                          The struct keyword defines a new data type, with more than one member.
+                          The format of the struct statement is as follows −
+
+                            struct struct_name { 
+                              type1 type_name_1;
+                              type2 type_name_2;
+                              type3 type_name_3;
+                              }
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+--> Mapping :  Mapping in Solidity acts like a hash table or dictionary in any other language. These are used to
+               store the data in the form of key-value pairs, a key can be any of the built-in data types but 
+               reference types are not allowed while the value can be of any type.
+
+
+               . Mapping is a refrence type like array and struct.
+               . Mapping allows you to save data and a key that you specify and then retrieve the data later.
+
+
+    # IMPORTANT_NOTE ->  In solidity you can't iterate through the map, you need to store the keys in an array and you can't  give size.
+
+     
+                     -> In Solidity if we try to retrieve a value corresponding to a key and if we haven't set the value then we will get a default value i.e. 0.
+                 
+
+
+--> Nested Mapping :  . maps within maps
+                      . eg1 ->  What if you wanted to store the movies that belong to a certain person, thing or address.  ** Very Important **.
+                      . eg2 ->  allow one address to spend on behalf of another address ( ERC20 tokens ).
+                      
+                      . Syntax : mapping( key => mapping( key2 => value )) //Nested Mapping.
+
+
+
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+
+
+
+
+--> What are uints ?
+
+     . The uint data type is unsigned integer which means it can store only positive integers.
+     . Negative integers can also be stored in solidity using int data type.
+     
+
+      #Note : . In solidity, uint is an alias for uint256, a 26-bits unsigned integer.
+              . you can store uint data with lesss bits too eg. uint8 , uint16 , uint32 etc.
+              . In general you only need uint expect some specific cases.
+
+      
+     #impress your interviewer - smart contract that are cost efficient.
+
+    #NOTE : uint is by default uint256.
+       
+
+                      min value uint can store = 0 
+                      max value uint can store = 2^256 - 1 
+
+
+** IMPORTANT POINTS TO REMEMBER :    
+          
+      1. Coversion to smaller type cost higher order bits.
+       
+                uint32 a = 0x12345678;
+                uint16 b = uint16( a);  // - 0x5678 higher bits are lost
+
+
+     2. Conversion to Higher type adds padding bits to the left.
+
+                uint16 c = 0x1234;
+                uint32 d = uint32( c ); // - 00001234 extra zeroes are padded to the left.
+
+
+     
+ 
+
+
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+--> Ether units
+ 
+      . Ethereum is a blockchain and ether is the currency for ethereum.
+
+
+    1. wei is the smallest denomination of ether ( 1 ether = 10^18 wei ).
+    
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+--> Global variables in solidity : 
+
+                     
+             . Special variables or global variables are the globally available variables and provides information about the blockchain.
+             . We can create an object of a contract and we can use it in other contract.
+ 
+    
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+--> Function Modifier :
+          
+                     . Function modifier are used to modify the behaviour of the function.
+                     . For eg- to add prerequisitory to the function.
+                     . Function modifier are the customizable modifications for functions. 
+
+
+
+   # NOTE : The function body is inserted where the special symbol "_;" appears in the definition of a modifier. So if condition of modifier is satisfied while calling this function,
+            the function is executed and otherwise, an exception is thrown.
+ 
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+--> View in Solidity :   
+
+
+           . The view functions are read-only function.
+           . They cannot modify the state variables but they can read their values and can return them too.
+
+--> Pure in Solidity :
+ 
+           . The pure functions are used when we do not read or write any state variable they just only perform some
+             specific tasks and they can return values too.
+
+
+# Note : Gas Cost - pure < view < simple
+
+
+
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+--> Fallback functions : 
+          
+                    . They do not have any name ( annonymous ).
+                    . They do not take any input.
+                    . They do not return any value.
+                    . Must be declared as external.
+
+
+
+                  # why do we use it ? 
+                  - When we want ti send ether to a contract and data too.
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+
+
+--> Function Overloading in solidity : In this we have same function name but they take different arguments at the time
+                                       of calling the function that function is called that have matched the type of the
+                                       function.
+
+
+             . You can have multiple defination for the same function name in the same scope.
+             . The defination of the function must be differ by the type or the number of arguments in the argument list.
+             . You cannot overload functions that differ only by return type.
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+--> Cryptographic hash functions ( CHF ) :
+
+   . CHF is a mathematical algortihm that maps data of arbitary size ( often called the "message" ) to a bit array 
+     of fixed size ( the "hash Value" , "hash" , "message digest" ).
+   . It is a one-way functions i.e. a function which is practically infeasible to invert or reverse the computation.
+
+   . Solidity provides in-built cryptographic functions. Following are some important functions -
+
+
+--> Keccak256( bytes memory ) returns (bytes32) - computes the keccak-256 hash of the input.
+--> sha256( bytes memory ) returns (bytes32) - computes the SHA-256 hash of the input.
+--> ripemd160( bytes memory) returns (bytes20) -  computes the ripemd-160 of the input.
+
+
+# NOTE :   keccak is the leading hash function. Designed by the non- NSA designers. It is an alternative to SHA-256.
+
+
+
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+--> Fallback and Recieve in Solidity : The work 'recieve' done can be done by fallback but vice-verca is not true. as recieve only takes ether but fallback takes both 
+                                       data and ether.
+
+
+   . FALLBACK  :    The solidity fallback function is executed if none of the other functions match the function identifier or no data was provided with the function call. Only one unnamed function can be assigned to a contract and it is executed whenever the contract receives plain Ether without any data. To receive Ether and add it to the total balance of the contract, the fallback function must be marked payable. If no such function exists, the contract cannot receive Ether through regular transactions and will throw an exception.
+
+                    Properties of a fallback function:
+
+                    It is executed when a non exixtence function is called on the contract.
+                    Has no name or arguments.
+                    If it is not marked payable, the contract will throw an exception if it receives plain ether without data.
+                    Can not return anything.
+                    Can be defined once per contract.
+                    It is also executed if the caller meant to call a function that is not available
+                    It is mandatory to mark it external.
+                    It is limited to 2300 gas when called by another function. It is so for as to make this function call as cheap as possible.
+                    Main aim is to send ether to the contract.
+
+
+   # Note : It is not recommended to use much code in fallback as it will consume to much of gas and the function might fail.
+
+
+
+--> 
+ 
+       . Recieve is also used to store ether in the contract but it just only take ether .
+       . No name.
+       . No input.
+       . No output
+       . Should be marked as external
+       . Should be marked as payable.
+
+
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+
+--> Function Overloading in solidity :    In this we have same function name but they take different arguments at the time
+                                                                                      of calling the function that function is called that have matched the type of the
+                                                                                      function.
+
+
+             . You can have multiple defination for the same function name in the same scope.
+             . The defination of the function must be differ by the type or the number of arguments in the argument list.
+             . You cannot overload functions that differ only by return type.
+
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+
+
+
+
+--> Cryptographic hash functions ( CHF ) :
+
+   . CHF is a mathematical algortihm that maps data of arbitary size ( often called the "message" ) to a bit array 
+     of fixed size ( the "hash Value" , "hash" , "message digest" ).
+   . It is a one-way functions i.e. a function which is practically infeasible to invert or reverse the computation.
+
+   . Solidity provides in-built cryptographic functions. Following are some important functions -
+
+
+--> Keccak256( bytes memory ) returns (bytes32) - computes the keccak-256 hash of the input.
+--> sha256( bytes memory ) returns (bytes32) - computes the SHA-256 hash of the input.
+--> ripemd160( bytes memory) returns (bytes20) -  computes the ripemd-160 of the input.
+
+
+# NOTE :   keccak is the leading hash function. Designed by the non- NSA designers. It is an alternative to SHA-256.
+
+
+
+
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+
+--> Events :   . They are used when we just want to log the data on the blockchain and we do not want to change or access them.
+                           . This is how on a very low cost it stores the data on the blockchain.
+                           . It is basically used to show the output.
+
+
+     
+--> Indexing :      It is a way that if we want to search anything on the blockchain then in emit we can use a keyword indexed with the arguments 
+                                   and we can maximum can add 3 parameters as indexed.
+
+
+--> Events :
+ 
+               . Event is an inheritable member of a contract.
+               . An event is emitted, it stores the arguments passed in transaction logs.
+               . These logs are stored on blockchain and are accessible using address of the contract till the contract is present on the blockchain.
+               . An event generated is not accessible from within contracts, not even the one which have created and emitted them.
+
+               .  //Declare an Event
+                  event Deposit(address indexed _from, bytes32 indexed _id, uint _value);
+
+                  //Emit an event
+                  emit Deposit(msg.sender, _id, msg.value);
+
+               . Here the gas cost is less as compared to the state variables.
+
+
+
+   # Note : when we use indexed keyword it gonna cost higher gas.
+           . We can only mark maximum 3 parameter in event as indexed
+           .  index help us to filter out and find out the easily on the blockchain.
+   
+    
+            
+
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+--> Withdrawl pattern in solidity : 
+
+           . Withdrawl pattern ensures that direct transfer call is not made which poses a security threat.
+           . Transfer are atomic ( meaning all or nothing ).
+           
+
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+
+Restricted Access to a Contract is a common practice. By Default, a contract state is read-only unless it is specified as public.
+
+We can restrict who can modify the contract's state or call a contract's functions using modifiers. We will create and use multiple modifiers as explained below −
+
+onlyBy − once used on a function then only the mentioned caller can call this function.
+
+onlyAfter − once used on a function then that function can be called after certain time period.
+
+costs − once used on a function then caller can call this function only if certain value is provided.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+--> Inheritance in Solidity : 
+
+                      . Inheritance is way of extending the functionality of the contract.
+                      . Solidity supports both single as well as multilevel inheritance.
+
+
+
+
+
+  --> Multiple inheritance : 
+
+
+ . in multiple inheritance we have to take care of the order of the contract too and that will be from "more base like to derived".
+      base like : that contract which will be less inherited will be more baselike.
+
+. Properties are inherited from right to left order. Eg : contract C is A,B { } then first C inherit property of B and then A.
+. And while doing all these if there are some properties that are present in B and A also then it will neglect to take such properties from A as they are inherited from B.
+
+
+
+
+
+
+
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+
+--> Abstract contract : 
+ 
+                 . Abstract Contract is one which contains at least one function without any implementation.
+                 . Such a contract is used as a base contract. 
+                 . Generally an abstract contract contains both implemented as well as abstract functions.
+                 . Derived contract will implement the abstract function and use the existing functions as and when required.
+                 . In case, a derived contract is not implementing the abstract function then this derived contract will be marked as abstract.
+
+
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+--> Interface :    
+ 
+           . Interfaces are similar to abstract contracts and are created using interface keyword. Following are the key characteristics of an interface.
+
+           . Interface can not have any function with implementation.
+
+           . Functions of an interface can be only of type external.
+
+           . Interface can not have constructor.
+
+           . Interface can not have state variables.
+
+           . Interface can have enum, structs which can be accessed using interface name dot notation.
+    
+           . Interface functions are implicitly virtual.
+
+
+ It connects our contract in a way where we do not have to copy and paste the code.
+ It is basically used to interact between multiple contracts through interface.
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+--> Library : 
+
+
+           . Libraries are similar to Contracts but are mainly intended for reuse. 
+           . A Library contains functions which other contracts can call. Solidity have certain restrictions on use of a Library. 
+           . Following are the key characteristics of a Solidity Library.
+
+              . Library functions can be called directly if they do not modify the state. That means pure or view functions only can be called from outside
+                the library.
+
+              . Library can not be destroyed as it is assumed to be stateless.
+
+              . A Library cannot have state variables.
+
+              . A Library cannot inherit any element.
+
+              . A Library cannot be inherited.
+
+
+
+#Note :   Using For
+ The directive using A for B; can be used to attach library functions of library A to a given type B.
+ These functions will used the caller type as their first parameter (identified using self).
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+--> Assembly :
+ 
+           . Solidity provides an option to use assembly language to write inlinr assembly within Solidity source code.
+           . Assembly is a low level language that allows you to directly manipulate the EVM (more dangerous and not recommended ).
+           EVM = smart contract are not the real code in the blockchain - solidity code is compiled to a lower level language.
+    . In assembly we are free of semicolons.
+    . We use opcodes.
+    . Assembly should be in a function.
+
+
+
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+
+
+
+--> Error Handling : 
+
+ 
+
+              . Solidity provides various functions for error handling. 
+              . Generally when an error occurs, the state is reverted back to its original state.
+              . Other checks are to prevent unauthorized code access. 
+              . Following are some of the important methods used in error handling −
+
+
+
+               . assert(bool condition) − In case condition is not met, this method call causes an invalid opcode and any changes done to state got reverted. 
+                                                                         This method is to be used for internal errors.
+
+                                                                    It is basically used to check bug in a smart contract and security.
+
+                                                          
+ 
+                              #Note : It refunds the leftover gas. 
+                                      The changes in the state variables also get revert if the require condition fails.
+
+               . require(bool condition) − In case condition is not met, this method call reverts to original state. - 
+                                                                          This method is to be used for errors in inputs or external components.
+                                                                                         #Note : Basically it is used in two things :
+                                     a. Input Validation
+                                     b. access control
+
+                                    #Note : It refunds the leftover gas. 
+                                      The changes in the state variables also get revert if the require condition fails.
+
+               . require(bool condition, string memory message) − In case condition is not met, this method call reverts to original state. 
+                                                                   This method is to be used for errors in inputs or external components. 
+                                                                  It provides an option to provide a custom message.
+                                                                    #Note : Basically it is used in two things :
+                                     a. Input Validation
+                                     b. access control
+
+               . revert() − This method aborts the execution and revert any changes done to the state.
+                                          #Note : It refunds the leftover gas. 
+                                      The changes in the state variables also get revert if the require condition fails.
+
+               . revert(string memory reason) − This method aborts the execution and revert any changes done to the state. 
+                                                 It provides an option to provide a custom message.
+                                                 #Note : It refunds the leftover gas. 
+                                      The changes in the state variables also get revert if the require condition fails.
+
+
+#Note : Revert have an advantage of custom error and due to which gas cost reduces and we can pass more parameter in the error.
+
+
+
+
+
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+
+
+
+
+--> Payable :    
+
+               . Tt is used to make an address or a function payable by adding a payable keyword.
+               . While delaring an address as payable payable keyword should be declare just after the dataType. For eg-  address payable public owner.
+               . If we make an address as payable then we can send ether to this account through this contract.
+               . If a contract have a payable function then with this function we can sebd ether to the contract.
+               . While assigning we also have to typeCast/covert the adrress also as payable. For eg- payable ( msg..sender ).
+               . We can also make a constructor as payable which means that at the time of deployment we can add ether to the contract.
+              
+
+           #Note : Payable function cannot be view or pure as by adding ether we are making change on the blockchain.
+
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
+
+
+--> Send ether frem a contract to an address or other contract - send , transfer and call : 
+
+     .  There are 3 ways in which you can send ether from a contract to an adreess or a other contract namely :
+ 
+        a.) send 
+        b.) transfer
+        c.) call
+
+
+   - SEND : . When we transfer ether from to contract to an address ( address or contract ) usind send function it returns a bool value if the transaction is
+              successful or false if the transaction is unsuccessful.
+            . This has a gas limit of 2300.
+            . If the send functions fails then it will not returns the leftover gas and we have to use require if we want to return the leftover gas.
+            . State variable also do not revert if we made some changes and the transacion failed so we have to use require.  
+ 
+
+  - Transfer :  . It also have a gas limit of 2300.
+                . It do not return anything.
+                . It revert the changes if the transaction fails.         
+
+
+
+  - CALL :  . In this we have to define the gas limit.
+            . It returns two things one bool and a data in bytes.
+            . Similar to send it does not revert changes if the transaction failed so we have to use require with call also.
+
+
+            
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ---------------
+
+
