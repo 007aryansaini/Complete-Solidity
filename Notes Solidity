@@ -22,7 +22,24 @@ Three syntax :    pragma solidity 0.8.0;
 
       
 -------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ------------------
+--> Comments in Solidity : 
+       . Comments are basically used by the developers to describe the smart contracts.
+       . The comments are not compiled by the compiler they are just the human readable texts.
+       . There are 3 types of comments in solidity :
+        
+              . Single Line comment : // anythin that can be written in this line will be a sinle-line comment.
+              . Multiple Line comment : /* anything b/w these is a multiple multiple line comment 
+                                             ------
+                                             -----  */
+              . natspec comment : These are the special type of comments that are used by the developers while documenting the smart contract.
+                 There are two type of natspec comments : 
+                  . single line natspec comment : /// @notice Returns the price of the property.
+                  . Multi-line natspec comment : /**  ------ */
 
+
+
+
+-------------------- x ---------------------------------- x --------------------------------------- X ------------------------------------ X ------------------
 
 
 --> Variables : 
