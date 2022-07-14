@@ -66,6 +66,9 @@ Three syntax :    pragma solidity 0.8.0;
              . Local Variable : 
                    . declared inside functions.
                    . They are generally stored in memory and as soon as the function ends they got vanished.
+                   . If we are using string, array or struct then we have to use the memory keyword to limit its lifetime to the function 
+                     call and not to be stored in the blockchain.
+                   . The local variable are stored in the stack and the do not cost until they are not reference type ( string , array , struct ).
                    
 
 
