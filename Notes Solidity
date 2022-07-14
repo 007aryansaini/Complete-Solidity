@@ -70,6 +70,11 @@ Three syntax :    pragma solidity 0.8.0;
                      call and not to be stored in the blockchain.
                    . The local variable are stored in the stack and the do not cost until they are not reference type ( string , array , struct ).
                    
+             . Global Variable : 
+                   . These are the variables that give information about the blockchain.
+                   . They can be access anywhere in the smart contract.
+                   . Eg : msg.sender , block.timestamp etc.
+                   
 
 
 
