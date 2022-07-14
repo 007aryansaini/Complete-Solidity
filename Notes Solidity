@@ -53,6 +53,20 @@ Three syntax :    pragma solidity 0.8.0;
             . Boolean - keyword : bool - Value: true/false
             . Integer - keyword : uint - value - signed and unsigned integer of varying sizes
             . String  - keyword : string - value - data values that ar made up of ordered sequence of characters.
+            
+            
+--> There are basically 3 types of variables in solidity :
+
+            . State Variable :
+                   . These are the variables that are declares at contract level.
+                   . They costs gas as they are stored on the blockchain.
+                   . They can be set as constants and immutable.
+                   . There are three ways to initialize them while declaring , through constructor or in function.
+                   
+             . Local Variable : 
+                   . declared inside functions.
+                   . They are generally stored in memory and as soon as the function ends they got vanished.
+                   
 
 
 
