@@ -54,6 +54,15 @@ Three syntax :    pragma solidity 0.8.0;
             . Integer - keyword : uint - value - signed and unsigned integer of varying sizes
             . String  - keyword : string - value - data values that ar made up of ordered sequence of characters.
             
+            #Note : let understand with an example we have uint8 x = 255; 255 is the maximum value that uint8 can hold. Before compiler versions
+                     0.8.0 if we try to increase the value of x then the integer overflows this is the big financial risk. You transaction become 
+                     successful and your value becomes 0. So at that time we uses the safeMath library for such vulnerabilities.
+                     
+                    But after compiler version 0.8.0, the compiler take care of this and if overflows condition occurs then the transaction is
+                    reverted and becomes unsuccessful. But in this compiler version we can get the same behaviour by using a keyword 
+                    " unchecked " and in the curly bracket we can write the code. The same behaviour can be observed.
+                    
+            
             
 --> There are basically 3 types of variables in solidity :
 
