@@ -356,6 +356,15 @@ Four types of memory Allocations ->
     
       . An array is a data structure which is used to store the similar type of data.
       . It used contiguous memory.
+      . There are two types of array in solidity :- 
+             . Fixed-Size array
+             . Dynamic-Size array
+             
+        . Fixed-size array : It is an array which have the fixed size and we have to declare the size of the array so at the compile time only
+                             the size of the array will be fixed. It cannot grow or shrink.
+                             
+        . Dynamic-size array : It is an array which do not have the fixed size and we do not have to declare the size of the array so at the 
+                              . It can grow or shrink.
 
 
 --> We will see :
