@@ -363,8 +363,16 @@ Four types of memory Allocations ->
         . Fixed-size array : It is an array which have the fixed size and we have to declare the size of the array so at the compile time only
                              the size of the array will be fixed. It cannot grow or shrink.
                              
-        . Dynamic-size array : It is an array which do not have the fixed size and we do not have to declare the size of the array so at the 
+        . Dynamic-size array : . They do not have a predetermined size at the time of declaration.
+                              . It is an array which do not have the fixed size and we do not have to declare the size of the array so at the 
                               . It can grow or shrink.
+                              . They have 3 members : length , pop , push
+                              
+               #Note : In both types of array there is a member called length which stores the no. of elements in the array.
+               # Important :  Increasung the length of the storage array by calling push() has constant gas cost beacuse storage is zero initialized.
+                              while decreasing the length by calling pop() has a cost that depends on the "size" of the element being removed.
+                              since solidity ^0.6.0 it's not possible to resize the storage array and array.length is read-only. The reason behind it
+                              to prevent storage collision of very large storage array.
 
 
 --> We will see :
