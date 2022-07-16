@@ -373,6 +373,7 @@ Four types of memory Allocations ->
                               while decreasing the length by calling pop() has a cost that depends on the "size" of the element being removed.
                               since solidity ^0.6.0 it's not possible to resize the storage array and array.length is read-only. The reason behind it
                               to prevent storage collision of very large storage array.
+               #Note : Fixed size array cost less gas than dynamic size array.
 
 
 --> We will see :
