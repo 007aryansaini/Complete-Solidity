@@ -1,0 +1,15 @@
+--> Reentrancy in Solidity :  .   We shoud always update the balance first and then transfer the value;
+                              .   or we should use a lock modifier 
+                              
+                                     bool internal locked;
+                              eg :-  modifier noReentrant{
+                                       require( !locked );
+                                       locked = true;
+                                       _;
+                                       locked = false;
+                                       
+                                       }
+                                       
+                                       
+                              
+                                
