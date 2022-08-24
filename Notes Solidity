@@ -284,7 +284,7 @@ Four types of memory Allocations ->
 
 #*** NOTE : Anything which is stored in storage can be passed in memory.
             Anything which is stored in memory cannot be passed in calldata.
-            But we can pass data from calldata to memory.
+            But we cannot pass data from calldata to memory.
 
 
   GAS Cost : calldata < memory < storage 
