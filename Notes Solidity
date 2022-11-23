@@ -9,7 +9,7 @@
 
 --> Pragma in Solidity 
 
-           . It is generally the first line of code within an Solidity File.
+           . It is generally the first line of code within a  Solidity File.
            . It is a directive that specifies the compiler version to be used for the current Solidity file.
            . Syntax - pragma slidity >= 0.7.0 < 0.9.0;   -- This is for a range of compilers this means that it supports compiler version greater 
                       than equal to 0.7.0 and less than 0.9.0
@@ -305,7 +305,7 @@ Four types of memory Allocations ->
     }
 
 
-# This can be achieved the string a string into bytes because working in bytes generally saves the computational cost.
+# This can be achieved by converting the string into bytes because working in bytes generally saves the computational cost.
 
 
 
